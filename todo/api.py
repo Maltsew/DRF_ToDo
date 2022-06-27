@@ -1,6 +1,6 @@
 from .models import Todo
 from rest_framework import viewsets, permissions
-from .serializers import TodoSerializer
+from .serializers import TodoDetailSerializer
 
 
 class TodoViewSet(viewsets.ModelViewSet):
@@ -8,4 +8,4 @@ class TodoViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = TodoSerializer
+    serializer_class = TodoDetailSerializer
