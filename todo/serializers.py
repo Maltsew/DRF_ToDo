@@ -9,6 +9,10 @@ class TodoListSerializer(serializers.ModelSerializer):
         fields = ('id', 'title')
 
 class TodoDetailSerializer(serializers.ModelSerializer):
+    # пользователь из request при авторизации
+    # убирает возможность менять пользователя
+
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
     # согл. документации
     class Meta:
         model = Todo
